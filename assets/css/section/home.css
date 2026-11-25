@@ -1,0 +1,389 @@
+:root {
+    --mainEng-font: "Pretendard";
+    --mainKor-font: "Pretendard";
+}
+
+body {
+    background-color: #000;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+strong {
+    color: #fff;
+}
+
+a {
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: var(--subColor600);
+}
+
+/* ------ */
+
+/* banner */
+
+#banner .banner {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .video_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+#banner .video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#banner .circles {
+    display: flex;
+    gap: clamp(30px, 5.2vw, 80px);
+    position: relative;
+    z-index: 2;
+}
+
+#banner .circle_wrap {
+    position: relative;
+    width: clamp(90px, 9.8vw, 150px);
+    height: clamp(90px, 9.8vw, 150px);
+}
+
+#banner .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: black;
+}
+
+#banner:has(.circle_wrap:nth-child(1):hover) .video1 {
+    opacity: 1;
+}
+
+#banner:has(.circle_wrap:nth-child(2):hover) .video2 {
+    opacity: 1;
+}
+
+#banner:has(.circle_wrap:nth-child(3):hover) .video3 {
+    opacity: 1;
+}
+
+#banner .circle {
+    transition: opacity 0.3s ease;
+}
+
+#banner .circle:hover {
+    opacity: 0;
+}
+
+#banner .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: clamp(60px, 6.5vw, 100px);
+    height: clamp(60px, 6.5vw, 100px);
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+}
+
+#banner .circle_wrap:hover .logo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- banner --- */
+
+/* text */
+
+#text {
+    padding-top: clamp(100px, 25vw, 400px);
+}
+
+#text h1 {
+    gap: 200px 0 0 0;
+    font-size: clamp(30px, 4.9vw, 75px);
+    text-align: center;
+}
+
+#text h1 span {
+    font-size: clamp(55px, 8.35vw, 128px);
+    font-family: "Teko";
+    color: var(--subColor600);
+    line-height: 0.45;
+}
+
+#text p {
+    font-size: clamp(16px, 1.56vw, 24px);
+    padding-top: clamp(30px, 3.9vw, 60px);
+    text-align: center;
+}
+
+#text .content_count {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    align-items: center;
+    padding-top: clamp(30px, 3.9vw, 60px);
+    width: 100%;
+}
+
+#text .count_number {
+    justify-content: center;
+    text-align: center;
+}
+
+#text .content_count .label {
+    font-size: clamp(16px, 1.63vw, 25px);
+    color: #797979;
+}
+
+#text span {
+    font-size: clamp(40px, 5.2vw, 80px);
+    font-weight: 700;
+}
+
+#text span.bar {
+    height: clamp(100px, 8.9vw, 171px);
+    width: 1px;
+    background-color: #fff;
+}
+
+/* --- text --- */
+
+/* bighit */
+
+.bighit {
+    margin-top: clamp(80px, 9.8vw, 150px);
+    margin-bottom: clamp(80px, 9.8vw, 150px);
+}
+
+#bighit .bighit_wrap {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 65.1vw;
+    height: clamp(350px, 39.1vw, 600px);
+    overflow: hidden;
+    position: relative;
+    transform: rotateX(0deg) translateZ(500px);
+    perspective: 1000px;
+}
+
+.t_block {
+    transform-style: preserve-3d;
+}
+
+#bighit .main_t {
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 2px var(--mainBg);
+    font-size: clamp(100px, 15vw, 230px);
+    line-height: clamp(73px, 10.9vw, 167px);
+    text-align: center;
+    font-weight: 700;
+    transform-origin: center bottom;
+    animation: text_rotation 12s linear infinite;
+    will-change: transform;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#bighit .mt_ori {
+    animation: none;
+}
+
+#bighit .mt_ori2 {
+    animation: none;
+    transform: translateX(-50%) rotateX(180deg);
+}
+
+#bighit .mtt2 {
+    top: calc(30% + clamp(167px, 21.75vw, 334px));
+}
+
+#bighit .mt2 {
+    animation-delay: 2.4s;
+}
+
+#bighit .mt3 {
+    animation-delay: 4.8s;
+}
+
+#bighit .mt4 {
+    animation-delay: 7.2s;
+}
+
+#bighit .mt5 {
+    animation-delay: 9.6s;
+}
+
+@keyframes text_rotation {
+    0% {
+        transform: translateX(-50%) rotateX(0deg);
+    }
+
+    50% {
+        transform: translateX(-50%) rotateX(180deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotateX(360deg);
+    }
+}
+
+/* --- bighit --- */
+
+/* label */
+
+#label {
+    font-family: "Teko";
+    margin-bottom: clamp(40px, 4.7vw, 72px);
+}
+
+#label .label_text .bold {
+    font-size: clamp(35px, 5.2vw, 80px);
+    font-weight: 700;
+}
+
+#label .box {
+    font-size: clamp(22px, 2.6vw, 40px);
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+#label .box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: clamp(100px, 13vw, 200px);
+    right: clamp(150px, 25vw, 350px);
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        #1515ff 0%,
+        #7777ff 35%,
+        #ffffff 50%,
+        #7777ff 65%,
+        #1515ff 100%
+    );
+}
+
+#label .box .left {
+    color: var(--mainBg);
+}
+
+#label .box .right {
+    color: var(--mainBg);
+}
+
+/* --- label --- */
+
+/* text_track */
+
+#text_track {
+    padding-bottom: clamp(80px, 26.67vw, 300px);
+}
+#text_track .text_track {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: clamp(8px, 0.8vw, 12px) 0;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    position: relative;
+}
+
+#text_track .banner_track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+#text_track .banner_group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: clamp(20px, 4vw, 60px);
+    padding-right: clamp(20px, 4vw, 60px);
+}
+
+#text_track .banner_group span {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: clamp(14px, 2vw, 24px);
+    font-weight: 300;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- text_track --- */
+
+@media (max-width: 768px) {
+    #label .box::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 105px;
+        right: 195px;
+        height: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    #text .content_count {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #text .count_number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #text span.bar {
+        display: none;
+    }
+}

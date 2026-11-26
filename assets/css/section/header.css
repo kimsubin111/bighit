@@ -15,9 +15,20 @@
     backdrop-filter: blur(15px);
 }
 .header_logo {
-    font-size: 0.9rem;
-    text-align: center;
-    line-height: 1;
+    flex-shrink: 0;
+}
+
+.header_logo h1 {
+    margin: 0;
+    padding: 0;
+}
+.header_logo a {
+    display: block;
+}
+.header_logo a img {
+    width: clamp(65px, 5.8333vw, 112px);
+    height: auto;
+    display: block;
 }
 .header_nav ul {
     display: flex;
@@ -114,5 +125,13 @@
     }
     .header_nav.show + .header_nav_mobile span::after {
         width: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .header_logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }

@@ -18,12 +18,13 @@ strong {
 #header .header {
     background-color: var(--txtBg);
 }
-#header .logo {
-    padding: 26px;
+#header .txtlogo {
+    padding: clamp(8px, 1.3542vw, 26px);
 }
-#header .logo img {
-    width: 118px;
-    height: 60px;
+#header .txtlogo img {
+    width: 6.1458vw;
+    height: 3.125vw;
+    aspect-ratio: 2 / 1;
 }
 /* // header */
 
@@ -32,7 +33,6 @@ strong {
     width: 100%;
     height: 45vw;
     background-color: var(--txtBg);
-    margin-bottom: 100px;
 }
 #banner .banner {
     overflow: hidden;
@@ -251,24 +251,31 @@ strong {
 #member .profile-info {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    min-width: 0;
+    justify-content: space-between;
+    height: 100%;
 }
 
+#member .profile-info .name {
+    flex: none;
+}
+
+#member .profile-info .birth {
+    flex: none;
+}
 #member .profile-info h2 {
     margin: 0;
     font-size: clamp(20px, 2vw, 48px);
-    font-weight: 800;
+    font-weight: normal;
 }
 
 #member .profile-info strong {
     font-size: clamp(20px, 2vw, 48px);
-    font-weight: 900;
+    font-weight: normal;
 }
 
 #member .profile-info span {
-    margin-top: 55px;
     font-size: clamp(18px, 2vw, 24px);
+    font-weight: normal;
 }
 
 #member .member-symbol {
@@ -349,6 +356,13 @@ strong {
     z-index: 31;
 }
 /* // member */
+
+/* mMembers */
+#mMembers {
+    display: none;
+    background-color: #000;
+}
+/* //mMembers */
 
 #discography .txt_discography {
     margin: 200px 0;
@@ -440,6 +454,7 @@ strong {
 
 /* AWARDS */
 #awards {
+    padding: 5.208333vw 0;
     position: relative;
     width: 100%;
 }
@@ -553,14 +568,18 @@ strong {
 }
 #footer .group_logo img {
     display: block;
-    width: clamp(55px, 11.41vw, 219px);
-    height: auto;
+    width: 6.1458vw;
+    height: 3.125vw;
+
     max-width: 100%;
     object-fit: contain;
 }
 #footer .group_logo span {
-    color: var(--txtBg100);
+    color: #fff;
     font-size: clamp(14px, 1.04vw, 20px);
+}
+#footer .group_logo a:hover span {
+    color: var(--txtBg100);
 }
 #footer .bighit_footer_logo {
     padding-top: 75px;
@@ -632,5 +651,133 @@ strong {
         width: clamp(280px, 60vw, 460px);
         max-width: 100%;
         clip-path: none;
+    }
+    #member {
+        display: none;
+    }
+
+    #mMembers {
+        display: block;
+        background-color: #000;
+    }
+
+    .mMembers_inner {
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 18.229167vw;
+        padding-bottom: 15.625vw;
+    }
+
+    .mMember_title h1 {
+        font-size: 4.6875vw;
+        font-weight: normal;
+        color: var(--btsBg);
+    }
+
+    .mMember_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 3.90625vw;
+
+        width: 88%;
+        margin: 0 auto;
+        padding-top: 7.8125vw;
+
+        position: relative;
+    }
+
+    .mArtLogo {
+        position: absolute;
+        width: 0.625vw;
+        height: 46.875vw;
+        object-fit: contain;
+        top: calc(50% + 3.90625vw);
+        transform: translateY(-50%);
+    }
+
+    .mArtLogo:first-child {
+        left: -4.166667vw;
+    }
+
+    .mArtLogo:last-child {
+        right: -4.166667vw;
+    }
+
+    .mMember_item {
+        width: 47%;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mMember_item > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .mMember_item span {
+        display: none;
+    }
+
+    .mImage_text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 27%;
+        background-color: #60606080;
+        color: #fff;
+    }
+
+    .mImage_text figcaption {
+        width: 100%;
+        height: 100%;
+        padding: 0.78125vw;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .mImage_text h3 {
+        font-size: clamp(14px, 1.0417vw, 20px);
+        font-weight: normal;
+        line-height: 1;
+    }
+
+    .mImage_text p {
+        font-size: clamp(14px, 0.7292vw, 18px);
+        line-height: 1;
+
+        position: absolute;
+        right: 0.78125vw;
+        bottom: 0.78125vw;
+    }
+
+    .mLogo_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mLogo_item:has(.logoList) {
+        background-color: #e1eaf2;
+    }
+    .mLogo_item .logoList {
+        width: clamp(97px, 8.0729vw, 155px);
+        height: clamp(50px, 4.1667vw, 80px);
+    }
+    .mLogo_item > img {
+        width: 27%;
+        height: 55%;
+        object-fit: contain;
+        object-position: center;
+    }
+    #discography .txt_discography .swiper-button-next,
+    #discography .txt_discography .swiper-button-prev {
+        display: none;
     }
 }

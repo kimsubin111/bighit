@@ -191,7 +191,7 @@ a:hover {
     margin: 0 auto;
     width: 100%;
     max-width: 65.1vw;
-    height: clamp(350px, 39.1vw, 600px);
+    height: clamp(350px, 45.1vw, 700px);
     overflow: hidden;
     position: relative;
     transform: rotateX(0deg) translateZ(500px);
@@ -291,14 +291,7 @@ a:hover {
     right: clamp(150px, 25vw, 350px);
     height: 1px;
 
-    background: linear-gradient(
-        to right,
-        #1515ff 0%,
-        #7777ff 35%,
-        #ffffff 50%,
-        #7777ff 65%,
-        #1515ff 100%
-    );
+    background: linear-gradient(to right, #0c1faa 0%, #ffffff 45%, #ffffff 55%, #0c1faa 100%);
 }
 
 #label .box .left {

@@ -138,3 +138,52 @@
         justify-content: flex-end;
     }
 }
+
+/* OUR ARTIST DROPDOWN */
+
+.header_nav > ul > li.artist_menu {
+    position: relative;
+}
+
+/* 기본적으로 숨기기 */
+.header_nav > ul > li.artist_menu > .artist_dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 140px;
+    padding: 12px 0;
+
+    background-color: #3f3f3f;
+    flex-direction: column;
+    gap: 0;
+
+    text-align: center;
+    z-index: 999;
+}
+
+/* OUR ARTIST에 hover 했을 때만 표시 */
+.header_nav > ul > li.artist_menu:hover > .artist_dropdown {
+    display: flex;
+}
+
+/* 하위 메뉴 간격 */
+.header_nav > ul > li.artist_menu > .artist_dropdown li {
+    width: 100%;
+    padding: 12px 0;
+}
+
+.header_nav > ul > li.artist_menu > .artist_dropdown li a {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.header_nav > ul > li.artist_menu > .artist_dropdown li a:hover {
+    color: var(--subColor600);
+}
+
+/* // OUR ARTIST DROPDOWN */

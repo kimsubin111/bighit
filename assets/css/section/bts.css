@@ -40,17 +40,17 @@ body {
 
     position: absolute;
     inset: 0;
-    overflow: hidden;
 
+    /* 양쪽 페이드 효과 */
     -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
-        #ffffff 34%,
-        #ffffff 64%,
+        #fff 34%,
+        #fff 64%,
         transparent 100%
     );
 
-    mask-image: linear-gradient(to right, transparent 0%, #ffffff 34%, #000 64%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #fff 34%, #fff 64%, transparent 100%);
 }
 
 .banner_track01 {

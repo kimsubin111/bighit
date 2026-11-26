@@ -69,8 +69,8 @@ a:hover {
 
 #banner .circle_wrap {
     position: relative;
-    width: clamp(90px, 9.8vw, 150px);
-    height: clamp(90px, 9.8vw, 150px);
+    width: clamp(100px, 13.0208vw, 250px);
+    height: clamp(100px, 13.0208vw, 250px);
 }
 
 #banner .circle {
@@ -114,12 +114,18 @@ a:hover {
     visibility: hidden;
     transition: opacity 0.3s ease;
 
-    pointer-events: none;
+    pointer-events: auto;
 }
 
-#banner .circle_wrap:hover .logo {
+#banner .circle_wrap:hover .logo,
+#banner .circle_wrap:has(a:hover) .logo {
     opacity: 1;
     visibility: visible;
+}
+
+#banner .circle_wrap:hover .circle,
+#banner .circle_wrap:has(a:hover) .circle {
+    opacity: 0;
 }
 
 /* --- banner --- */
@@ -190,7 +196,6 @@ a:hover {
 #bighit .bighit_wrap {
     margin: 0 auto;
     width: 100%;
-    max-width: 65.1vw;
     height: clamp(350px, 45.1vw, 700px);
     overflow: hidden;
     position: relative;

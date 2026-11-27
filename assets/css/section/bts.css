@@ -2,25 +2,9 @@ body {
     background-color: #000;
 }
 
-/* header */
-#header {
-    width: 100%;
-    background-color: #000;
-}
-.header {
-    padding: 1.09375vw 2.5vw;
-}
-.btsLogo {
-    width: 1.770833vw;
-    height: 3.697917vw;
-}
-.btsLogo .fil1 {
-    fill: #fff;
-}
-/* //header */
-
 /* banner */
 #banner {
+    margin-top: clamp(4rem, 5vw, 6rem);
     width: 100%;
     height: 40vw;
     background-color: #000;
@@ -40,17 +24,17 @@ body {
 
     position: absolute;
     inset: 0;
+    overflow: hidden;
 
-    /* 양쪽 페이드 효과 */
     -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
-        #fff 34%,
-        #fff 64%,
+        #ffffff 34%,
+        #ffffff 64%,
         transparent 100%
     );
 
-    mask-image: linear-gradient(to right, transparent 0%, #fff 34%, #fff 64%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #ffffff 34%, #000 64%, transparent 100%);
 }
 
 .banner_track01 {

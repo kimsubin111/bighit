@@ -125,7 +125,7 @@ gsap.ticker.add((time) => {
     const last = points[points.length - 1];
 
     let path = `M ${(last.x + first.x) / 2}
-                  ${(last.y + first.y) / 2}`;
+                    ${(last.y + first.y) / 2}`;
 
     points.forEach((point, i) => {
         const next = points[(i + 1) % points.length];

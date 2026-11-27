@@ -29,16 +29,19 @@ a:hover {
     color: var(--subColor600);
 }
 
-/* CONTENTS */
+/* ========================================
+   CONTENTS
+======================================== */
+
 #contents {
     margin-top: clamp(4rem, 5vw, 6rem);
-}
-
-#contents .portfolio .view {
-    align-items: end;
+    background-color: #000;
+    position: relative;
+    transition: background-color 0.2s;
 }
 
 /* Portfolio */
+
 #contents .portfolio {
     margin: 100px 0;
     position: relative;
@@ -46,7 +49,12 @@ a:hover {
     padding: 20px 0;
 }
 
-/* Project Area */
+#contents .portfolio .view {
+    align-items: end;
+}
+
+/* Project */
+
 #contents .project {
     height: 25vh;
     min-height: 150px;
@@ -58,16 +66,14 @@ a:hover {
     padding: 0 4%;
 
     cursor: pointer;
-
     text-decoration: none;
     color: #fff;
 
     transition: padding 0.3s;
 }
 
-/* 프로젝트 가로선 */
+/* Project Lines */
 
-/* 모든 프로젝트의 아래쪽 선 */
 #contents .project::after {
     content: "";
     position: absolute;
@@ -85,7 +91,8 @@ a:hover {
     pointer-events: none;
 }
 
-/* 첫 번째 프로젝트에만 위쪽 선 */
+/* First Project Top Line */
+
 #contents .portfolio > .project:first-child::before,
 #contents .portfolio > .content_inner:first-child .project:first-child::before {
     content: "";
@@ -104,7 +111,8 @@ a:hover {
     pointer-events: none;
 }
 
-/* 기존 선 퇴장: 오른쪽에서 왼쪽 */
+/* Old Lines: Right to Left */
+
 #contents .tab-panel.line-leaving .project::after,
 #contents .tab-panel.line-leaving .portfolio > .project:first-child::before,
 #contents
@@ -116,7 +124,8 @@ a:hover {
     transform-origin: right;
 }
 
-/* 새 선 등장 준비: 왼쪽에서 시작 */
+/* New Lines: Left to Right */
+
 #contents .tab-panel.line-entering .project::after,
 #contents .tab-panel.line-entering .portfolio > .project:first-child::before,
 #contents
@@ -130,6 +139,7 @@ a:hover {
 }
 
 /* Number */
+
 #contents .number {
     font-size: 24px;
     font-weight: 600;
@@ -141,6 +151,7 @@ a:hover {
 }
 
 /* Project Title */
+
 #contents .info {
     flex: 1;
 }
@@ -160,6 +171,7 @@ a:hover {
 }
 
 /* View More */
+
 #contents .view {
     color: var(--subColor600);
     margin-left: auto;
@@ -169,6 +181,7 @@ a:hover {
 }
 
 /* Preview Image */
+
 #contents .preview {
     position: absolute;
     width: 480px;
@@ -197,6 +210,7 @@ a:hover {
 }
 
 /* Hover Image */
+
 #contents .project:hover .preview {
     opacity: 1;
     visibility: visible;
@@ -204,12 +218,18 @@ a:hover {
     transform: translateY(-50%) rotate(8deg) scale(1);
 }
 
-/* CONTENTS HEADER */
+/* ========================================
+   CONTENTS HEADER
+======================================== */
+
 #contents .contents-header {
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 /* CONTENTS TITLE */
+
 #contents .contents-title {
     padding: 25px 0;
 }
@@ -226,6 +246,7 @@ a:hover {
 }
 
 /* ARTIST FILTER */
+
 #contents .artist-filter {
     display: flex;
     align-items: center;
@@ -236,6 +257,7 @@ a:hover {
 }
 
 /* FILTER LABEL */
+
 #contents .filter-label {
     flex-shrink: 0;
 
@@ -245,7 +267,8 @@ a:hover {
     letter-spacing: -0.04em;
 }
 
-/* ARTIST TAB MENU */
+/* ARTIST TABS */
+
 #contents .artist-tabs {
     display: flex;
     align-items: center;
@@ -256,6 +279,7 @@ a:hover {
 }
 
 /* TAB BUTTON */
+
 #contents .artist-tab {
     position: relative;
 
@@ -277,60 +301,29 @@ a:hover {
         border-color 0.3s ease;
 }
 
-/* TAB HOVER */
 #contents .artist-tab:hover {
     color: #fff;
     border-color: #fff;
 }
 
-/* ACTIVE TAB */
 #contents .artist-tab.active {
     color: #000;
     background: #fff;
     border-color: #fff;
 }
 
-/* 기존 밑줄 제거 */
 #contents .artist-tab.active::after {
     display: none;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    #contents .contents-title {
-        padding: 20px 0;
-    }
+/* ========================================
+   TAB PANEL
+======================================== */
 
-    #contents .contents-title h1 {
-        font-size: clamp(38px, 10vw, 60px);
-    }
-
-    #contents .artist-filter {
-        align-items: flex-start;
-        flex-direction: column;
-
-        gap: 18px;
-        padding: 20px 0;
-    }
-
-    #contents .filter-label {
-        font-size: 20px;
-    }
-
-    #contents .artist-tabs {
-        justify-content: flex-start;
-        gap: 8px;
-    }
-
-    #contents .artist-tab {
-        padding: 7px 16px;
-        font-size: 14px;
-    }
-}
-
-/* TAB CONTENT */
 #contents .tab-panel {
     display: none;
+    position: relative;
+    overflow: hidden;
 }
 
 #contents .tab-panel.active {
@@ -338,6 +331,7 @@ a:hover {
 }
 
 /* BG TYPO */
+
 .bg_typo {
     position: absolute;
     inset: 0;
@@ -356,6 +350,7 @@ a:hover {
 }
 
 /* BG TRACK */
+
 .bg_typo .bg_track {
     position: absolute;
     top: 50%;
@@ -365,7 +360,6 @@ a:hover {
     animation: typoMove 20s linear infinite;
 }
 
-/* BG LOOP */
 .bg_typo .bg_loop {
     display: flex;
     flex-shrink: 0;
@@ -373,7 +367,6 @@ a:hover {
     min-width: 110vw;
 }
 
-/* BG GROUP */
 .bg_typo .bg_group {
     display: flex;
     flex-direction: column;
@@ -385,7 +378,6 @@ a:hover {
     transform: rotate(-12deg);
 }
 
-/* TYPO TEXT */
 .bg_typo span {
     display: block;
     font-size: 18vw;
@@ -411,7 +403,8 @@ a:hover {
     -webkit-text-stroke: 1px rgba(20, 20, 20, 0.5);
 }
 
-/* 가로 무한 반복 */
+/* BG ANIMATION */
+
 @keyframes typoMove {
     from {
         transform: translate(0, -50%);
@@ -422,7 +415,6 @@ a:hover {
     }
 }
 
-/* 색상 변화 */
 @keyframes typoColor {
     0%,
     100% {
@@ -442,17 +434,12 @@ a:hover {
     }
 }
 
-/* ARTIST TAB 배경 타이포 공통 설정 */
-#contents .tab-panel {
-    position: relative;
-    overflow: hidden;
-}
+/* PANEL LAYERS */
 
 #contents .tab-panel .bg_typo {
     position: absolute;
     inset: 0;
     z-index: 0;
-
     pointer-events: none;
 }
 
@@ -461,8 +448,59 @@ a:hover {
     z-index: 1;
 }
 
-/* 모바일 */
+/* ========================================
+   TRANSITION SUPPORT
+======================================== */
+
+/* 전환 중 전체 콘텐츠 */
+
+#contents.is-switching {
+    background-color: #fff;
+}
+
+/* 흰 화면에서 글자가 보이지 않도록 처리 */
+
+#contents.is-switching .contents-header,
+#contents.is-switching .tab-panel {
+    pointer-events: none;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 768px) {
+    #contents .contents-title {
+        padding: 20px 0;
+    }
+
+    #contents .contents-title h1 {
+        font-size: clamp(38px, 10vw, 60px);
+    }
+
+    #contents .artist-filter {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    #contents .filter-label {
+        font-size: 20px;
+    }
+
+    #contents .artist-tabs {
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 35px 0 25px;
+    }
+
+    #contents .artist-tab {
+        padding: 7px 16px;
+        font-size: 13px;
+    }
+
     #contents .project {
         height: auto;
         min-height: unset;
@@ -476,10 +514,6 @@ a:hover {
 
     #contents .project:hover {
         padding: 20px 4%;
-    }
-
-    #contents .project:hover .preview {
-        transform: none;
     }
 
     #contents .number {
@@ -500,21 +534,15 @@ a:hover {
         transition: none;
     }
 
+    #contents .project:hover .preview {
+        transform: none;
+    }
+
     #contents .preview img {
         display: block;
         width: 100%;
         height: auto;
         object-fit: cover;
-    }
-
-    #contents .artist-tabs {
-        gap: 8px;
-        padding: 35px 0 25px;
-    }
-
-    #contents .artist-tab {
-        padding: 7px 16px;
-        font-size: 13px;
     }
 
     #contents .info h2 {

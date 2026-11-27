@@ -669,7 +669,7 @@ body {
     }
 
     .mLogo_item:has(.mLogoList) {
-        background-color: #171717;
+        background-color: #969696;
     }
 
     .mLogo_item > img {

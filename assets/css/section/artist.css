@@ -225,11 +225,14 @@ a:hover {
     inset: 0;
 
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center center;
     background-size: cover;
 
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+.slider_inner .aLogo01::before {
+    background-position: 0 0;
 }
 
 /* BTS 배경 이미지 */
@@ -247,7 +250,17 @@ a:hover {
     background-image: url("../../img/cortis/member/cortisAll.png");
 }
 
-/* 로고 공통 */
+/* 카드 전체를 클릭할 수 있도록 설정 */
+.slider_inner .slide_item a {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* 로고 이미지 */
 .slider_inner .slide_item img {
     position: absolute;
     left: 50%;
@@ -257,6 +270,7 @@ a:hover {
     z-index: 1;
     opacity: 1;
     transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
 /* 로고 개별 크기 */
@@ -568,6 +582,15 @@ a:hover {
     .slider_inner .cLogo {
         width: 135px;
     }
+    /* TXT */
+    .slider_inner .aLogo02::before {
+        background-image: url("../../img/txt/member/txt2.webp");
+    }
+
+    /* CORTIS */
+    .slider_inner .aLogo03::before {
+        background-image: url("../../img/cortis/member/cortis3.webp");
+    }
 }
 @media (max-width: 600px) {
     #banner {
@@ -634,10 +657,20 @@ a:hover {
 
     #slider {
         flex-direction: column;
+        height: auto;
+        padding: 50px 0;
     }
 
     .slider_inner {
         flex-direction: column;
+        align-items: center;
         padding-top: 65px;
+        gap: 20px;
+    }
+
+    .slider_inner .slide_item {
+        width: 340px;
+        height: 220px;
+        cursor: default;
     }
 }
